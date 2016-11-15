@@ -71,3 +71,39 @@ We all love books, don't we? Well if you don't, you should at least pretend to d
 
 1. Can you write this code in fewer lines?
 2. Using appropriate module you can define list of characters that will represent word separators (default `.split()` works on whitespaces). Modify your program so that words will be split on each character from defined list.
+
+### 5. I'm terrible at remembering names...
+Well, I probably won't remember yours... `:(`
+
+ 1. Create dictionary `friends`  where `key == name && value == special_trade` of all your friends.
+ 2. Create list `friend_names` that only contains only names of your friends.
+ 3. Create list `special_trades` that contains only those trades that no one else has.
+ 4. Create new dictionary that is `name: [trades]`. 
+ 5. Each person whom name starts with letter **A** gets new `awesome` trade.
+
+**Extra:**
+``` python
+a = ["Awesome", "Awesomeness"]
+b = [a for _ in range(3)]
+b.append(["Awesome", "Awesomeness"])
+a.append("End")
+print(b)
+```
+
+### 6. Like a gentleman
+With class...
+
+ 1. Create `Classroom` class that has contains list of `Students` but has maximum number of students allowed (constructor parameter).
+ 2. Each `Student` has unique id number, first and last name, and list of courses in current semester.
+ 3. Add `add_student`, `remove_student`, `has_student` methods to `Classroom` class where argument is unique id number
+ 4. What if unique id already exists in classroom?
+
+``` python
+class SomeClass(object):
+    def __init__(self, a, b = 5, c = []):
+        self.a = a
+        self.b = b
+        self.c = c      # This is mad!
+```
+
+### 7. I'm Batman.
