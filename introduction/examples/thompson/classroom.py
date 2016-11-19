@@ -12,7 +12,9 @@ class Classroom:
         self.students = []
 
     def add_student(self, student_id):
-        if not isinstance(student_id, int) or len(self.students) >= self.capacity or student_id in self.students:
+        if not isinstance(student_id, int):
+            return False
+        elif  len(self.students) >= self.capacity or student_id in self.students:
             return False
         else:
             self.students.append(student_id)

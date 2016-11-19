@@ -4,16 +4,14 @@ import operator
 
 def most_used(words, n):
     with open(words, 'r') as myfile:
-        data = myfile.read().replace('\n', ' ')
+        data = myfile.read()
+        data = data.replace('\n', ' ')
     words = data.split()
-    dict = Counter(words)
-    sorted_dict = sorted(dict.items(), key=operator.itemgetter(1), reverse=True)
+    dicti = Counter(words)
+    sorted_dict = sorted(dicti.items(), key=operator.itemgetter(1), reverse=True)
 
-    i = 0
-    while n > 0:
+    for i in range(0, n):
         print(str(sorted_dict[i][1]) + " " + str(sorted_dict[i][0]))
-        i += 1
-        n -= 1
 
 
-most_used("text.txt", 5)
+most_used("text.txt", 1)

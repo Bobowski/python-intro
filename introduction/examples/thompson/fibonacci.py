@@ -1,36 +1,31 @@
 def list_fibonacci(n):
-    if isinstance(n, int):
-        if n >= 0:
-            list1 = [0]
-            pre = 0
-            post = 1
-            for i in range(n):
-                tmp = pre + post
-                pre = post
-                post = tmp
-                list1.append(pre)
-            return list1
+    if not isinstance(n, int):
         return 0
+    if n >= 0:
+        list1 = []
+        pre = 0
+        post = 1
+        for i in range(n):
+            pre, post = post, pre + post
+            list1.append(pre)
+        return list1
     return 0
 
 
-def iter_fibonacii(n):
+def iter_fibonacci(n):
     if isinstance(n, int):
         pre = 0
         post = 1
         for i in range(n):
-            tmp = pre + post
-            pre, post = post, tmp
+            pre, post = post, pre + post
         return pre
     else:
         return 0
 
 
 def rec_fibonacci(n):
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
+    if n in [0, 1]:
+        return n
     else:
         return rec_fibonacci(n - 1) + rec_fibonacci(n - 2)
 

@@ -6,16 +6,17 @@ friends_names = list(friends.keys())
 special_trades_list = list(set(friends.values()))
 
 # zadanie 3
-special_trades = [e for e in friends.values() if list(friends.values()).count(e) < 2]
+special_trades = [e for e in friends.values() if list(friends.values()).count(e) == 1]
 
 # zadanie 4
 friends_trades = {}
 
 for person in friends:
     if person.startswith("A"):
-        friends_trades.update({person: [friends[person], "awesome"]})
+        # friends_trades.update({person: [friends[person], "awesome"]})
+        friends_trades[person] = [friends[person], "awesome"]
     else:
-        friends_trades.update({person: [friends[person]]})
+        friends_trades[person] = [friends[person]]
 
 # list comprehension
 # zadanie 2
