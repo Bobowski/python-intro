@@ -93,8 +93,7 @@ print(b)
 ### 6. First real homework
 _I know it's not mandatory course, but hey! I need to know if you understand anything so far. `:)`_
 
- 1. Copy this dictionary into your python file (module). I apologise if some data is incorrect, my memory is not perfect :)
- ```
+ ``` python
  # Dictionary that represents students from last class.
  # Key: unique id, Value: (name, semester, list of favorite OS's) 
  students = {
@@ -111,6 +110,8 @@ _I know it's not mandatory course, but hey! I need to know if you understand any
     10: ("Sebastian", 1, ["Windows 10"])
  }
  ```
+
+ 1. Copy dictionary from above into your python file (module). I apologise if some data is incorrect, my memory is not perfect :)
  2. Write function `students_count(students)` that returns number of students in class
  3. write function `was_present(students, name)` that returns `True` only if someone of given `name` was on last class.
  4. Write function `unique_was_present(students, unique_id)` that returns `True` only if someone of given `unique_id` was on last class.
