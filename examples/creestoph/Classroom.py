@@ -7,17 +7,14 @@ class Classroom(dict):
         super().__init__()
         self.max_number = max
 
-    def add_student(self, student):
-        if len(self) > self.max_number or self.has_student(student.id):
+    def __setitem__(self, key, value):
+        if len(self) > self.max_number or key in self.keys():
             raise AlreadyInClassException
-        self[student.id] = student
+        super().__setitem__(key, value)
 
-    def remove_student(self, student):
-        if self.has_student(student.id):
-            del self[student.id]
-
-    def has_student(self, id):
-        return id in self.keys()
+    def __delitem__(self, key):
+        if key in self.keys():
+            super().__delitem__(key)
 
 
 class Student:
@@ -37,6 +34,7 @@ class Student:
 a = Classroom(10)
 s1 = Student(1, "Krzysiek", "Strzelecki", ("Informatyka",))
 s2 = Student(2, "Adam", "Bobowski", ("Informatyka", "Costam"))
-a.add_student(s1)
-a.add_student(s2)
+a[s1.id] = s1
+a[s2.id] = s2
+del a[s1.id]
 print(a)
