@@ -87,3 +87,8 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+#creestoph files
+examples/creestoph/.idea
+examples/creestoph/test.txt
+examples/creestoph/primes.txt
