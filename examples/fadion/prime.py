@@ -3,7 +3,9 @@ import random
 
 
 def is_prime(x):
-    if isinstance(x, int) and x > 1:
+    if not isinstance(x, int) or x <= 1:
+        return False
+    else:
         if x == 2:
             return True
         elif x % 2 == 0:
@@ -15,12 +17,12 @@ def is_prime(x):
                     return False
                 i += 2
             return True
-    else:
-        return False
 
 
 def eratosthenes(x):
-    if isinstance(x, int) and x > 1:
+    if not isinstance(x, int) or x <= 1:
+        return False
+    else:
         numbers = [False, False]
         primes = []
         for i in range(x):
@@ -44,12 +46,12 @@ def eratosthenes(x):
                 primes.append(i)
             i += 2
         return primes
-    else:
-        return -1
 
 
 def only_primes(x):
-    if isinstance(x, list):
+    if not isinstance(x, list):
+        return -1
+    else:
         i = 0
         y = []
         for r in map(is_prime, x):
@@ -60,7 +62,9 @@ def only_primes(x):
 
 
 def miller_rabin_test(x, y):
-    if isinstance(x, int) and x > 1 and isinstance(y, int) and y > 0:
+    if not isinstance(x, int) or x <= 1 or not isinstance(y, int) or y <= 0:
+        return False
+    else:
         if x == 2:
             return True
         elif x % 2 == 0:
@@ -69,8 +73,8 @@ def miller_rabin_test(x, y):
             s = 0
             d = x - 1
             while d % 2 == 0:
-                s = s + 1
-                d = d // 2
+                s += 1
+                d //= 2
             for _ in range(y):
                 a = random.randrange(1, x - 1)
                 z = pow(a, d, x)
@@ -83,11 +87,9 @@ def miller_rabin_test(x, y):
                 else:
                     return False
         return True
-    else:
-        return False
 
 
 print(is_prime(19))
 print(eratosthenes(20))
 print(only_primes([1, 2, 6, 7]))
-print(miller_rabin_test(221, 40))
+print(miller_rabin_test(223, 40))

@@ -5,13 +5,9 @@ class Classroom(object):
 
     def add_student(self, student):
         if len(self.students) < self.count:
-            try:
-                if student.uid in self.students.keys():
-                    raise AlreadyInClassroomException("You can't add student with non unique id")
-            except AlreadyInClassroomException as e:
-                print("Exception! " + e.arg)
-            else:
-                self.students[student.uid] = student
+            if student.uid in self.students.keys():
+                raise AlreadyInClassroomException
+            self.students[student.uid] = student
 
     def remove_student(self, student):
         del self.students[student.uid]
@@ -30,16 +26,15 @@ class Student(object):
         self.courses = courses
 
 
-class AlreadyInClassroomException(RuntimeError):
-    def __init__(self, arg):
-        self.arg = arg
+class AlreadyInClassroomException(Exception):
+    pass
 
 
 a = Student(0, "A", "B", ["Python"])
 c = Student(1, "C", "D", ["Python"])
 b = Classroom(10)
 b.add_student(a)
-b.add_student(a)
+# b.add_student(a)
 b.add_student(c)
 print([student.uid for student in b.students.values()])
 print([student.lname for student in b.students.values()])
