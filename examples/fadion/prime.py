@@ -3,7 +3,9 @@ import random
 
 
 def is_prime(x):
-    if not isinstance(x, int) or x <= 1:
+    if not isinstance(x, int):
+        return False
+    elif x <= 1:
         return False
     else:
         if x == 2:
@@ -20,7 +22,9 @@ def is_prime(x):
 
 
 def eratosthenes(x):
-    if not isinstance(x, int) or x <= 1:
+    if not isinstance(x, int):
+        return False
+    elif x <= 1:
         return False
     else:
         numbers = [False, False]
@@ -62,7 +66,13 @@ def only_primes(x):
 
 
 def miller_rabin_test(x, y):
-    if not isinstance(x, int) or x <= 1 or not isinstance(y, int) or y <= 0:
+    if not isinstance(x, int):
+        return False
+    elif x <= 1:
+        return False
+    elif not isinstance(y, int):
+        return False
+    elif y <= 0:
         return False
     else:
         if x == 2:

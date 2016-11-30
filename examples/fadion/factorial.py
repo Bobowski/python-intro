@@ -1,5 +1,7 @@
 def rec_factorial(x):
-    if not isinstance(x, int) or x <= -1:
+    if not isinstance(x, int):
+        return -1
+    elif x <= -1:
         return -1
     else:
         if x == 0 or x == 1:
@@ -9,7 +11,9 @@ def rec_factorial(x):
 
 
 def iter_factorial(x):
-    if not isinstance(x, int) or x <= -1:
+    if not isinstance(x, int):
+        return -1
+    elif x <= -1:
         return -1
     else:
         a = 1
@@ -21,7 +25,9 @@ def iter_factorial(x):
 
 
 def list_factorial(x):
-    if not isinstance(x, int) or x <= -1:
+    if not isinstance(x, int):
+        return -1
+    elif x <= -1:
         return -1
     else:
         l = [1]
@@ -31,7 +37,13 @@ def list_factorial(x):
 
 
 def acc_factorial(x, a):
-    if not isinstance(x, int) or x <= -1 or not isinstance(a, int) or a <= 0:
+    if not isinstance(x, int):
+        return -1
+    elif x <= -1:
+        return -1
+    elif not isinstance(a, int):
+        return -1
+    elif a <= 0:
         return -1
     else:
         if x == 0 or x == 1:

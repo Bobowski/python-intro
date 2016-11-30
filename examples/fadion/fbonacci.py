@@ -2,7 +2,9 @@ import math
 
 
 def rec_fibonacci(x):
-    if not isinstance(x, int) or x <= -1:
+    if not isinstance(x, int):
+        return -1
+    elif x <= -1:
         return -1
     else:
         if x == 0:
@@ -14,7 +16,15 @@ def rec_fibonacci(x):
 
 
 def acc_fibonacci(x, a, b):
-    if not isinstance(x, int) or x <= -1 or not isinstance(a, int) or a <= -1 or not isinstance(b, int) or b <= -1:
+    if not isinstance(x, int):
+        return -1
+    elif x <= -1:
+        return -1
+    elif not isinstance(a, int):
+        return -1
+    elif not isinstance(b, int):
+        return -1
+    elif b <= -1:
         return -1
     else:
         if x == 0:
@@ -24,7 +34,9 @@ def acc_fibonacci(x, a, b):
 
 
 def iter_fibonacci(x):
-    if not isinstance(x, int) or x <= -1:
+    if not isinstance(x, int):
+        return -1
+    elif x <= -1:
         return -1
     else:
         a = 0
@@ -37,7 +49,9 @@ def iter_fibonacci(x):
 
 
 def list_fibonacci(x):
-    if not isinstance(x, int) or x <= -1:
+    if not isinstance(x, int):
+        return -1
+    elif x <= -1:
         return -1
     else:
         l = [0]
@@ -50,7 +64,9 @@ def list_fibonacci(x):
 
 # Binet's formula which we can derive from the generating function of the Fibonacci sequence
 def root_fibonacci(x):
-    if not isinstance(x, int) or x <= -1:
+    if not isinstance(x, int):
+        return -1
+    elif x <= -1:
         return -1
     else:
         a = (1.0 + math.sqrt(5)) / 2.0
